@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fff066a-323b-4e89-8444-7e384ad808b2" name="Default Changelist" comment="react UI &amp; UX">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/App_bak.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/users/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/users/UserLogin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/express-session.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reqTest.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/table.sql" afterDir="false" />
+    <list default="true" id="2fff066a-323b-4e89-8444-7e384ad808b2" name="Default Changelist" comment="login, logout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/users/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/users/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/users/UserLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/users/UserLogin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -415,7 +408,7 @@
       <workItem from="1607837924376" duration="976000" />
       <workItem from="1607857234643" duration="1740000" />
       <workItem from="1608106709311" duration="1296000" />
-      <workItem from="1608110033541" duration="8004000" />
+      <workItem from="1608110033541" duration="9614000" />
     </task>
     <task id="LOCAL-00001" summary="Add Node.js Express Server Module">
       <created>1607487578171</created>
@@ -431,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607753350710</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="login, logout">
+      <created>1608118627412</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608118627412</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +452,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Node.js Express Server Module" />
     <MESSAGE value="react UI &amp; UX" />
-    <option name="LAST_COMMIT_MESSAGE" value="react UI &amp; UX" />
+    <MESSAGE value="login, logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="login, logout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,14 +7,10 @@ class User extends React.Component {
     render(){
         return (
             <TableRow>
-                {/*<TableCell>1</TableCell>*/}
-                {/*<TableCell>매천고</TableCell>*/}
-                {/*<TableCell>20</TableCell>*/}
-                {/*<TableCell>400</TableCell>*/}
-                <TableCell>{this.props.id}</TableCell>
-                <TableCell>{this.props.account}</TableCell>
-                <TableCell>{this.props.testRoomNum}</TableCell>
-                <TableCell>{this.props.applicantNum}</TableCell>
+                <TableCell>{this.props.user.id}</TableCell>
+                <TableCell>{this.props.user.account}</TableCell>
+                <TableCell>{this.props.user.testRoomNum}</TableCell>
+                <TableCell>{this.props.user.applicantNum}</TableCell>
             </TableRow>
         )
     }

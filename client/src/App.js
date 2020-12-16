@@ -80,6 +80,13 @@ class App extends Component {
         .catch(err => console.log(err));
   }
 
+  userInfo = (userData) =>{
+    this.setState({
+      user: userData
+    })
+  }
+
+
   componentDidMount() {
     this.timer = setInterval(this.progress, 20);
     this.callApi()
@@ -113,7 +120,7 @@ class App extends Component {
               <Typography variant="h6" className={classes.title}>
                 2022 수능 시스템
               </Typography>
-              <UserLogin />
+              <UserLogin userInfo = {this.userInfo}/>
             </Toolbar>
           </AppBar>
           <div className={classes.menu}>
@@ -130,7 +137,7 @@ class App extends Component {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <User id = '1' account = '매천고' testRoomNum='20' applicantNum='400'/>
+                <User user={this.state.user}/>
               </TableBody>
             </Table>
           </Pager>

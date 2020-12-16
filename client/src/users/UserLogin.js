@@ -42,6 +42,7 @@ class UserLogin extends React.Component{
         const url ='/auth/login'
         axios.post(url, this.state)
             .then(res =>{
+                this.props.userInfo(res.data)
                 this.setState({
                     isLogined : true,
                     btn : 'LOGOUT'
@@ -56,6 +57,7 @@ class UserLogin extends React.Component{
         if(this.state.isLogined){
             axios.get('/auth/logout')
                 .then(res =>{
+                    this.props.userInfo('')
                     this.setState({
                         isLogined : false,
                         btn : 'LOGIN'
