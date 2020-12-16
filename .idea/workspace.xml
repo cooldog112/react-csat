@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fff066a-323b-4e89-8444-7e384ad808b2" name="Default Changelist" comment="Add Node.js Express Server Module">
+    <list default="true" id="2fff066a-323b-4e89-8444-7e384ad808b2" name="Default Changelist" comment="react UI &amp; UX">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App_bak.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/users/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/users/UserLogin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/express-session.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reqTest.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/CustomerAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CustomerAdd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
+        <option value="HTTP Request" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -48,57 +50,343 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\IdeaProjects\react-csat\client\src\users" />
+      <recent name="C:\Users\USER\IdeaProjects\react-csat\client\src" />
       <recent name="C:\Users\user\IdeaProjects\csat" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\IdeaProjects\react-csat" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:5000/auth/login" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;account&quot;" />
+                <option name="value" value="&quot;매천고&quot;," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;password&quot;" />
+                <option name="value" value="&quot;1234&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:5000/api/user" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;account&quot;" />
+                <option name="value" value="&quot;매천고&quot;," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;password&quot;" />
+                <option name="value" value="&quot;1234&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000/api/user" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;account&quot;" />
+                <option name="value" value="&quot;매천고&quot;," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;password&quot;" />
+                <option name="value" value="&quot;1234&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:5000/api/user" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;account&quot;" />
+                <option name="value" value="&quot;매천&quot;," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;password&quot;" />
+                <option name="value" value="&quot;123&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000/test/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  'a'" />
+                <option name="value" value="'매천고'," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  'b'" />
+                <option name="value" value="'1234'" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000/test/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;a&quot;" />
+                <option name="value" value="&quot;매천고&quot;," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;b&quot;" />
+                <option name="value" value="&quot;1234&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:5000/test/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;a&quot;" />
+                <option name="value" value="&quot;매천고&quot;," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;b&quot;" />
+                <option name="value" value="&quot;1234&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/user/1" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:5000/test" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;a&quot;" />
+                <option name="value" value="&quot;매천고&quot;," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="  &quot;b&quot;" />
+                <option name="value" value="&quot;1234&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/api/user/1" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000/api/user" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;account&quot;: &quot;매천고&quot;,&#10;  &quot;password&quot;: &quot;1234&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:5000/api/user" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;account&quot;: &quot;매천고&quot;,&#10;  &quot;password&quot;: &quot;1234&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.reqTest#2">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/user/IdeaProjects/csat" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+    <configuration name="reqTest#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/reqTest.http" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+    <configuration name="reqTest#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/reqTest.http" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+    <configuration name="reqTest#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/reqTest.http" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="reqTest#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/reqTest.http" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
       <scripts>
-        <script value="server" />
+        <script value="start" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -106,9 +394,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="Gradle.C:/Users/user/IdeaProjects/csat" />
-        <item itemvalue="npm.server" />
+        <item itemvalue="HTTP Request.reqTest#2" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="HTTP Request.reqTest#1" />
+        <item itemvalue="HTTP Request.reqTest#3" />
+        <item itemvalue="HTTP Request.reqTest#4" />
       </list>
     </recent_temporary>
   </component>
@@ -121,6 +411,11 @@
       <option name="presentableId" value="Default" />
       <updated>1607481745166</updated>
       <workItem from="1607481747629" duration="10389000" />
+      <workItem from="1607816624836" duration="17460000" />
+      <workItem from="1607837924376" duration="976000" />
+      <workItem from="1607857234643" duration="1740000" />
+      <workItem from="1608106709311" duration="1296000" />
+      <workItem from="1608110033541" duration="8004000" />
     </task>
     <task id="LOCAL-00001" summary="Add Node.js Express Server Module">
       <created>1607487578171</created>
@@ -129,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607487578171</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="react UI &amp; UX">
+      <created>1607753350710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607753350710</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +451,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Node.js Express Server Module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Node.js Express Server Module" />
+    <MESSAGE value="react UI &amp; UX" />
+    <option name="LAST_COMMIT_MESSAGE" value="react UI &amp; UX" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/components/Customer.js</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

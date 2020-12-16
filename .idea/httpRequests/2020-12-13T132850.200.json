@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "account": "매천고",
+    "password": "1234",
+    "testRoomNum": 20,
+    "applicantNum": 400,
+    "stored_path": null,
+    "original_name": null,
+    "created": "2020-12-13T01:43:15.000Z",
+    "updated": "2020-12-13T01:43:15.000Z"
+  }
+]

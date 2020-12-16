@@ -1,0 +1,375 @@
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천",
+  "password": "123"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/test/
+Content-Type: application/json
+{:
+  'a': '매천고',
+  'b': '1234'
+}:
+
+###
+
+POST http://localhost:3000/test/
+Content-Type: application/json
+{:
+  'a': '매천고',
+  'b': '1234'
+}:
+
+###
+
+POST http://localhost:3000/test/
+Content-Type: application/json
+{:
+  'a': '매천고',
+  'b': '1234'
+}:
+
+###
+
+POST http://localhost:3000/test/
+Content-Type: application/json
+{:
+  "a": "매천고",
+  "b": "1234"
+}:
+
+###
+
+POST http://localhost:5000/test/
+Content-Type: application/json
+{:
+  "a": "매천고",
+  "b": "1234"
+}:
+
+###
+
+GET http://localhost:5000/api/user/1
+
+<> 2020-12-13T134044.200.json
+
+###
+
+POST http://localhost:5000/test/
+Content-Type: application/json
+{:
+  "a": "매천고",
+  "b": "1234"
+}:
+
+###
+
+POST http://localhost:5000/test
+Content-Type: application/json
+{:
+  "a": "매천고",
+  "b": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+GET http://localhost:3000/api/user/1
+
+<> 2020-12-13T133223.404.html
+
+###
+
+GET http://localhost:5000/api/user/1
+
+<> 2020-12-13T133220.200.json
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+GET http://localhost:3000/api/user/1
+
+<> 2020-12-13T132910.404.html
+
+###
+
+GET http://localhost:5000/api/user/1
+
+<> 2020-12-13T132850.200.json
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+GET http://localhost:5000/api/user/1
+
+<> 2020-12-13T132637.200.json
+
+###
+
+GET http://localhost:3000/api/user/1
+
+<> 2020-12-13T132631.404.html
+
+###
+
+GET http://localhost:5000/api/user/1
+
+<> 2020-12-13T132625.200.json
+
+###
+
+GET http://localhost:3000/api/user/1
+
+<> 2020-12-13T132607.404.html
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+{:
+  "account": "매천고",
+  "password": "1234"
+}:
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+  "account": "매천고",
+  "password": "1234"
+}
+
+<> 2020-12-13T131706.200.json
+
+###
+
+POST http://localhost:5000/api/user
+Content-Type: application/json
+
+{
+  "account": "매천고",
+  "password": "1234"
+}
+
+<> 2020-12-13T131645.200.json
+
+###
+
