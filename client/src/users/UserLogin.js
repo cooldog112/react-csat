@@ -42,11 +42,16 @@ class UserLogin extends React.Component{
         const url ='/auth/login'
         axios.post(url, this.state)
             .then(res =>{
-                this.props.userInfo(res.data)
-                this.setState({
-                    isLogined : true,
-                    btn : 'LOGOUT'
-                })
+                if(res.data){
+                    this.props.userInfo(res.data)
+                    this.setState({
+                        isLogined : true,
+                        btn : 'LOGOUT'
+                    })    
+                }else{
+                    alert("LOGIN에 실패했습니다. 학교명 또는 비밀번호를 확인하세요")
+                }
+                
             })
             .catch(error=>{
                 console.log(error)
@@ -103,7 +108,7 @@ class UserLogin extends React.Component{
                     <DialogTitle className={classes.menu} >로그인</DialogTitle>
                     <DialogContent >
                         <TextField className={classes.menu} label="학교명" type="text" name="account" variant="outlined" value={this.state.account} onChange={this.handleValueChange}/><br/>
-                        <TextField className={classes.menu} label="비밀번호" type="text" name="password" variant="outlined" value={this.state.password} onChange={this.handleValueChange}/><br/>
+                        <TextField className={classes.menu} label="비밀번호" type="password" name="password" variant="outlined" value={this.state.password} onChange={this.handleValueChange}/><br/>
                     </DialogContent>
                     <DialogActions className={classes.menu}>
                         <Button className={classes.button} variant="contained" color="primary" onClick={this.handleFormSubmit}>로그인</Button>

@@ -82,7 +82,7 @@ app.post('/auth/login', (req, res)=>{
                 req.session.account = post.account;
                 res.send(rows[0]);
             }else{
-                res.send();
+                res.send(false);
             }
         })
 

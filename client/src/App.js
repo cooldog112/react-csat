@@ -19,17 +19,40 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
 
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
 
 const styles = theme => ({
   root: {
     width : '100%',
-    minWidth : 1080
+    minWidth : 1080,
+    height : '100%',
+    backgroundColor : '#eeeeee'
   },
   menu:{
     marginTop : 15,
     marginBottom : 15,
     display:'flex',
+    justifyContent: 'center'
+  },
+  userTitle:{
+    marginTop : 15,
+    marginBottom : 15,
     justifyContent: 'center'
   },
   paper:{
@@ -50,9 +73,23 @@ const styles = theme => ({
       display: 'block',
     },
   },
+  subTitle:{
+    flexGrow: 1,
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+    marginLeft : 40,
+    marginTop : 20,
+    marginBottom : 20
+  },
   tableHead:{
-    fontSize: '1.0rem',
-    justifyContent : 'center'
+    fontSize: '1.5rem',
+    justifyContent : 'center',
+    textAlign : 'center',
+    width : '20%',
+    height: '25px',
+    backgroundColor : '#f5fffa'
   }
 })
 
@@ -117,23 +154,61 @@ class App extends Component {
               <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <MenuIcon />
               </IconButton>
-              <Typography variant="h6" className={classes.title}>
+              <Typography variant="h5" className={classes.title}>
                 2022 수능 시스템
               </Typography>
               <UserLogin userInfo = {this.userInfo}/>
             </Toolbar>
           </AppBar>
-          <div className={classes.menu}>
-            <CustomerAdd stateRefresh={this.stateRefresh}/>
-          </div>
+          <Typography variant="h5" className={classes.subTitle}>
+            학교 정보
+          </Typography>
           <Pager className={classes.paper}>
             <Table className={classes.table}>
               <TableHead>
                 <TableRow>
-                  <TableCell>번호</TableCell>
-                  <TableCell>학교명</TableCell>
-                  <TableCell>시험장 수</TableCell>
-                  <TableCell>지원자 수</TableCell>
+                  <TableCell className={classes.tableHead}>번호</TableCell>
+                  <TableCell className={classes.tableHead}>학교명</TableCell>
+                  <TableCell className={classes.tableHead}>시험장 수</TableCell>
+                  <TableCell className={classes.tableHead}>지원자 수</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <User user={this.state.user}/>
+              </TableBody>
+            </Table>
+          </Pager>
+          <Typography variant="h5" className={classes.subTitle}>
+            시험지 이상 유무 보고
+          </Typography>
+          <Pager className={classes.paper}>
+            <Table className={classes.table}>
+              <TableHead>
+                <TableRow>
+                  <TableCell className={classes.tableHead}>보고자 직위</TableCell>
+                  <TableCell className={classes.tableHead}>보고자 이름</TableCell>
+                  <TableCell className={classes.tableHead}>이상유무</TableCell>
+                  <TableCell className={classes.tableHead}>기타사항</TableCell>
+                  <TableCell className={classes.tableHead}>보고</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <User user={this.state.user}/>
+              </TableBody>
+            </Table>
+          </Pager>
+          <Typography variant="h5" className={classes.subTitle}>
+            일반시험장 현황
+          </Typography>
+          <Pager className={classes.paper}>
+            <Table className={classes.table}>
+              <TableHead>
+                <TableRow>
+                  <TableCell className={classes.tableHead}>교시</TableCell>
+                  <TableCell className={classes.tableHead}>지원자</TableCell>
+                  <TableCell className={classes.tableHead}>응시자</TableCell>
+                  <TableCell className={classes.tableHead}>결시자</TableCell>
+                  <TableCell className={classes.tableHead}>보고</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
