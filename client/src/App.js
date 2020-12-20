@@ -3,6 +3,7 @@ import User from "./users/User";
 import UserLogin from "./users/UserLogin";
 import Customer from "./components/Customer";
 import CustomerAdd from "./components/CustomerAdd";
+import Report from "./reports/Report";
 import Pager from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -100,6 +101,7 @@ class App extends Component {
     this.state = {
       customers: '',
       user:'',
+      report : '',
       completed: 0,
       searchKeyword: ''
     }
@@ -107,20 +109,25 @@ class App extends Component {
 
   stateRefresh = () => {
     this.setState({
-      customers: '',
-      user:'',
-      completed: 0,
-      searchKeyword: ''
+      report:''
     });
-    this.callApi()
-        .then(res => this.setState({customers: res}))
+    this.reportRefresh()
+        .then(res => this.setState({report : res}))
         .catch(err => console.log(err));
+
+  }
+  reportRefresh = async () =>{
+    const response = await fetch('/api/report/'+this.state.user.id);
+    const body = await response.json();
+
+    return body;
   }
 
   userInfo = (userData) =>{
     this.setState({
       user: userData
     })
+    this.stateRefresh();
   }
 
 
@@ -193,7 +200,7 @@ class App extends Component {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <User user={this.state.user}/>
+                <Report report={this.state.report}/>
               </TableBody>
             </Table>
           </Pager>

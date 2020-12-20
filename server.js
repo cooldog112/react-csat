@@ -55,16 +55,16 @@ app.get('/api/user/:id', (req, res)=>{
         }
     )
 });
-
-app.delete('/api/customers/:id', (req, res)=>{
-    let sql = 'UPDATE CUSTOMER SET isDeleted = 1 WHERE id = ?';
+app.get('/api/report/:id', (req, res)=>{
+    let sql = 'SELECT * FROM REPORT WHERE user_id= ?';
     let params = [req.params.id];
     connection.query(sql, params,
-        (err, rows, fields) => {
-            res.send(rows);
+        (err, rows, fields) =>{
+            res.send(rows[0]);
         }
     )
 });
+
 
 //로그인
 app.post('/auth/login', (req, res)=>{
