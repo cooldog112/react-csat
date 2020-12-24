@@ -65,6 +65,16 @@ app.get('/api/report/:id', (req, res)=>{
     )
 });
 
+app.get('/api/person/:id', (req, res)=>{
+    let sql = 'select id, user_id, period, applicant, candidate, absentee, created, updated from person where id in (select max(id) from person where user_id = ? group by period) order by period';
+    let params = [req.params.id];
+    connection.query(sql, params,
+        (err,rows, fields)=>{
+            console.log(rows);
+            res.send(rows);
+        })
+});
+
 app.post('/report/add', (req, res)=> {
     let sql = 'INSERT INTO REPORT(user_id, position, name, error, content) values(?, ?, ?, ?, ?)';
     let post = req.body;

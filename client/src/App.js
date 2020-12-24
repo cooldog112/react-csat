@@ -4,6 +4,7 @@ import UserLogin from "./users/UserLogin";
 import Customer from "./components/Customer";
 import CustomerAdd from "./components/CustomerAdd";
 import Report from "./reports/Report";
+import Person from "./persons/Person";
 import Pager from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -95,6 +96,9 @@ const styles = theme => ({
 })
 
 class App extends Component {
+  state={
+    persons:''
+  }
 
   constructor(props) {
     super(props);
@@ -102,6 +106,7 @@ class App extends Component {
       customers: '',
       user:'',
       report : '',
+      persons : '',
       completed: 0,
       searchKeyword: ''
     }
@@ -114,10 +119,19 @@ class App extends Component {
     this.reportRefresh()
         .then(res => this.setState({report : res}))
         .catch(err => console.log(err));
+    this.personRefresh()
+        .then(res => this.setState({persons : res}))
+        .catch(err => console.log(err));
 
   }
   reportRefresh = async () =>{
     const response = await fetch('/api/report/'+this.state.user.id);
+    const body = await response.json();
+
+    return body;
+  }
+  personRefresh = async () => {
+    const response = await fetch('/api/person/'+this.state.user.id);
     const body = await response.json();
 
     return body;
@@ -196,7 +210,7 @@ class App extends Component {
                   <TableCell className={classes.tableHead}>보고자 이름</TableCell>
                   <TableCell className={classes.tableHead}>이상유무</TableCell>
                   <TableCell className={classes.tableHead}>기타사항</TableCell>
-                  <TableCell className={classes.tableHead}>보고</TableCell>
+                  <TableCell className={classes.tableHead}>비  고</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -219,7 +233,8 @@ class App extends Component {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <User user={this.state.user}/>
+                {/*<Person person={this.state.person}/>*/}
+                {this.state.persons ? this.state.persons.map((c) => {  return <Person key={c.id} person={c}/>}) : ''}
               </TableBody>
             </Table>
           </Pager>

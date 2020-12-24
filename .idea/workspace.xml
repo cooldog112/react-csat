@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fff066a-323b-4e89-8444-7e384ad808b2" name="Default Changelist" comment="login, logout">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020-12-12__1_51__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020-12-20__12_38__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020-12-20__12_38__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="2fff066a-323b-4e89-8444-7e384ad808b2" name="Default Changelist" comment="report add">
+      <change afterPath="$PROJECT_DIR$/client/src/persons/Person.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/persons/PersonAdd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/client/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App_bak.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App_bak.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/reports/ReportAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reports/ReportAdd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
@@ -43,11 +44,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/persons" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\IdeaProjects\react-csat\client\src\persons" />
       <recent name="C:\Users\USER\IdeaProjects\react-csat\client\src\users" />
       <recent name="C:\Users\USER\IdeaProjects\react-csat\client\src" />
       <recent name="C:\Users\user\IdeaProjects\csat" />
@@ -415,6 +417,7 @@
       <workItem from="1608106709311" duration="1296000" />
       <workItem from="1608110033541" duration="9614000" />
       <workItem from="1608170772463" duration="7510000" />
+      <workItem from="1608790641756" duration="3554000" />
     </task>
     <task id="LOCAL-00001" summary="Add Node.js Express Server Module">
       <created>1607487578171</created>
@@ -437,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608118627412</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="report add">
+      <created>1608786344671</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608786344671</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,16 +469,7 @@
     <MESSAGE value="Add Node.js Express Server Module" />
     <MESSAGE value="react UI &amp; UX" />
     <MESSAGE value="login, logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="login, logout" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/components/Customer.js</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="report add" />
+    <option name="LAST_COMMIT_MESSAGE" value="report add" />
   </component>
 </project>

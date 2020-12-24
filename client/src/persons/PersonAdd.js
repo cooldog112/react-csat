@@ -21,7 +21,7 @@ const styles = theme =>({
     }
 });
 
-class ReportAdd extends  React.Component{
+class PersonAdd extends  React.Component{
 
     constructor(props) {
         super(props);
@@ -125,4 +125,4 @@ class ReportAdd extends  React.Component{
         )
     }
 }
-export default withStyles(styles)(ReportAdd);
+export default withStyles(styles)(PersonAdd);
