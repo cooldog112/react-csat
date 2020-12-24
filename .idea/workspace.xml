@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ba588e9-07c4-4f2a-a120-9f5f7cc12b46" name="Default Changelist" comment="">
+    <list default="true" id="1ba588e9-07c4-4f2a-a120-9f5f7cc12b46" name="Default Changelist" comment="report dialog">
       <change afterPath="$PROJECT_DIR$/client/src/reports/Report.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/src/reports/ReportAdd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020-12-12__1_51__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020-12-12__1_51__Default_Changelist_.xml" afterDir="false" />
@@ -44,15 +44,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,6 +85,14 @@
       <workItem from="1607740117122" duration="951000" />
       <workItem from="1607741090715" duration="4112000" />
     </task>
+    <task id="LOCAL-00001" summary="report dialog">
+      <created>1608453550732</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608453550732</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,5 +109,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="report dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="report dialog" />
   </component>
 </project>
