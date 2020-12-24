@@ -200,7 +200,7 @@ class App extends Component {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <Report report={this.state.report}/>
+                <Report stateRefresh={this.stateRefresh} report={this.state.report} id={this.state.user.id}/>
               </TableBody>
             </Table>
           </Pager>

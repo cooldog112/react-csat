@@ -56,7 +56,7 @@ app.get('/api/user/:id', (req, res)=>{
     )
 });
 app.get('/api/report/:id', (req, res)=>{
-    let sql = 'SELECT * FROM REPORT WHERE user_id= ?';
+    let sql = 'SELECT * FROM REPORT WHERE user_id= ? ORDER BY id DESC';
     let params = [req.params.id];
     connection.query(sql, params,
         (err, rows, fields) =>{
@@ -65,6 +65,22 @@ app.get('/api/report/:id', (req, res)=>{
     )
 });
 
+app.post('/report/add', (req, res)=> {
+    let sql = 'INSERT INTO REPORT(user_id, position, name, error, content) values(?, ?, ?, ?, ?)';
+    let post = req.body;
+    let params = [post.id, post.position, post.name, post.error, post.content];
+    connection.query(sql, params,
+        (err, rows, fields) => {
+            console.log('rows', rows);
+            console.log('err', err);
+            if(err){
+                res.send(false)
+            }else{
+                res.send(true)
+            }
+        }
+    )
+});
 
 //로그인
 app.post('/auth/login', (req, res)=>{
