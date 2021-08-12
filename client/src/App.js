@@ -102,6 +102,15 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.loginCheck()
+        .then(res => this.setState({user : res}))
+        .catch(err => console.log(err));
+    this.reportRefresh()
+        .then(res => this.setState({report : res}))
+        .catch(err => console.log(err));
+    this.personRefresh()
+        .then(res => this.setState({persons : res}))
+        .catch(err => console.log(err));
     this.state = {
       customers: '',
       user:'',
@@ -114,7 +123,8 @@ class App extends Component {
 
   stateRefresh = () => {
     this.setState({
-      report:''
+      report:'',
+      person:''
     });
     this.reportRefresh()
         .then(res => this.setState({report : res}))
@@ -124,14 +134,20 @@ class App extends Component {
         .catch(err => console.log(err));
 
   }
+  loginCheck = async () => {
+    const response = await fetch('/userInfo');
+    const body = await response.json();
+    return body;
+  }
+
   reportRefresh = async () =>{
-    const response = await fetch('/api/report/'+this.state.user.id);
+    const response = await fetch('/api/report/');
     const body = await response.json();
 
     return body;
   }
   personRefresh = async () => {
-    const response = await fetch('/api/person/'+this.state.user.id);
+    const response = await fetch('/api/person/');
     const body = await response.json();
 
     return body;
@@ -167,7 +183,6 @@ class App extends Component {
 
   render() {
     const {classes} = this.props;
-
     return (
         <div className={classes.root}>
           <AppBar position="static">
@@ -234,7 +249,7 @@ class App extends Component {
               </TableHead>
               <TableBody>
                 {/*<Person person={this.state.person}/>*/}
-                {this.state.persons ? this.state.persons.map((c) => {  return <Person key={c.id} person={c}/>}) : ''}
+                {this.state.persons ? this.state.persons.map((c) => {  return <Person key={c.id} person={c} id={this.state.user.id} stateRefresh={this.stateRefresh}/>}) : ''}
               </TableBody>
             </Table>
           </Pager>
@@ -242,6 +257,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default withStyles(styles)(App);

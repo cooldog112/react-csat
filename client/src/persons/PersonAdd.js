@@ -22,24 +22,15 @@ const styles = theme =>({
 });
 
 class PersonAdd extends  React.Component{
-
     constructor(props) {
         super(props);
         this.state = {
-          position : '',
-          name : '',
-          error : '',
-          content : '',
+          period : '',
+          applicant : '',
+          candidate : '',
+          absentee : '',
           open : false
         }
-    }
-
-    insertReport(id){
-        // const url ='/api/customers/' + id;
-        // fetch(url, {
-        //     method : 'DELETE'
-        // });
-        // this.props.stateRefresh();
     }
 
     handleClickOpen = () => {
@@ -65,59 +56,48 @@ class PersonAdd extends  React.Component{
         this.setState(nextState);
     }
 
-    updateReport = () => {
-        const url ='/report/add'
-        let report = {
+    updatePerson = () => {
+        const url ='/person/add'
+        let person = {
             id : this.props.id,
-            position : this.state.position,
-            name : this.state.name,
-            error : this.state.error,
-            content : this.state.content
+            period : this.props.person.period,
+            applicant : this.state.applicant,
+            candidate : this.state.candidate,
+            absentee : this.state.absentee
         }
-        axios.post(url, report)
+        axios.post(url, person)
             .then(res =>{
                 if(res){
-                    alert('문답지 이상유무 보고 완료')
+                    alert(person.period+'교시 응시자 보고 완료')
                     this.handleClose()
                     this.props.stateRefresh()
-
                 }else{
-                    alert('문답지 이상유무 보고에 실패했습니다.')
+                    alert('응시자 보고에 실패했습니다.')
                 }
-
             })
             .catch(error=>{
                 console.log(error)
             })
-
     }
 
     render() {
         const { classes } = this.props;
         return(
             <div>
-                <Button variant="contained" color="primary" onClick={this.handleClickOpen}>보고하기</Button>
+                <Button variant="contained" color="primary" onClick={this.handleClickOpen}>응시자 보고</Button>
                 <Dialog open={this.state.open} onClose={this.handleClose}>
-                    <DialogTitle onClose={this.handleClose}>문답지 이상유무 보고</DialogTitle>
-
-
+                    <DialogTitle onClose={this.handleClose}>{this.props.person.period}교시 수험생 보고</DialogTitle>
                     <DialogContent>
                         <form autoComplete="off">
                             {/*<TextField label="보고자 직위" type="text" name="position" value={this.state.report.position} onChange={this.handleValueChange}/><br/>*/}
-                            <TextField label="보고자 직위" type="text" name="position" value={this.state.position}onChange={this.handleValueChange}/><br/>
-                            <TextField label="보고자 이름" type="text" name="name" value={this.state.name} onChange={this.handleValueChange}/><br/>
-                            <br/>
-                            <FormLabel component="legend">이상유무</FormLabel>
-                            <RadioGroup aria-label="이상유무" name="error" value={this.state.error} onChange={this.handleValueChange}>
-                                <FormControlLabel value="이상없음" control={<Radio />} label="이상없음" />
-                                <FormControlLabel value="이상있음" control={<Radio />} label="이상있음" />
-                            </RadioGroup>
-                            <TextField label="특이사항" type="text" name="content" value={this.state.content} onChange={this.handleValueChange}/>
+                            {/*<TextField label="지원자" type="number" name="applicant" value={this.state.applicant} onChange={this.handleValueChange}/><br/>*/}
+                            <TextField label="응시자" type="number" name="candidate" value={this.state.candidate} onChange={this.handleValueChange}/><br/>
+                            {/*<TextField label="결시자" type="number" name="absentee" value={this.state.absentee} onChange={this.handleValueChange}/><br/>*/}
                         </form>
 
                     </DialogContent>
                     <DialogActions>
-                        <Button variant="contained" color="primary" onClick={(e)=>{this.updateReport()}}>추가</Button>
+                        <Button variant="contained" color="primary" onClick={(e)=>{this.updatePerson()}}>추가</Button>
                         <Button variant="outlined" color="primary" onClick={this.handleClose}>닫기</Button>
                     </DialogActions>
                 </Dialog>

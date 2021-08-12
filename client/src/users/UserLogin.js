@@ -28,14 +28,15 @@ const styles = theme =>({
 
 
 class UserLogin extends React.Component{
+
     constructor(props){
         super(props);
         this.state = {
-            account : '',
-            password : '',
-            open : false,
-            isLogined : false,
-            btn : 'LOGIN'
+            account: '',
+            password: '',
+            open: false,
+            isLogined: false,
+            btn: 'LOGIN'
         }
     }
     login = () => {

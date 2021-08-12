@@ -55,9 +55,9 @@ app.get('/api/user/:id', (req, res)=>{
         }
     )
 });
-app.get('/api/report/:id', (req, res)=>{
+app.get('/api/report', (req, res)=>{
     let sql = 'SELECT * FROM REPORT WHERE user_id= ? ORDER BY id DESC';
-    let params = [req.params.id];
+    let params = [req.session.user_id];
     connection.query(sql, params,
         (err, rows, fields) =>{
             res.send(rows[0]);
@@ -65,9 +65,9 @@ app.get('/api/report/:id', (req, res)=>{
     )
 });
 
-app.get('/api/person/:id', (req, res)=>{
+app.get('/api/person', (req, res)=>{
     let sql = 'select id, user_id, period, applicant, candidate, absentee, created, updated from person where id in (select max(id) from person where user_id = ? group by period) order by period';
-    let params = [req.params.id];
+    let params = [req.session.user_id];
     connection.query(sql, params,
         (err,rows, fields)=>{
             console.log(rows);
@@ -92,6 +92,40 @@ app.post('/report/add', (req, res)=> {
     )
 });
 
+app.post('/person/add', (req, res)=> {
+    let selectSql = 'select id, user_id, period, applicant, candidate, absentee, created, updated from person where id in (select max(id) from person where user_id = ? and period = ?)';
+    let selectParams = [req.body.id, req.body.period];
+    let post = req.body;
+    let applicant='';
+    connection.query(selectSql, selectParams,
+        (err,rows, fields)=>{
+            if(rows){
+                applicant = rows[0].applicant;
+                let sql = 'INSERT INTO PERSON(user_id, period, applicant, candidate, absentee) values(?, ?, ?, ?, ?)';
+                let candidate = req.body.candidate;
+                let params = [post.id, post.period, applicant, candidate, applicant-candidate];
+                console.log("params : " + params);
+                connection.query(sql, params,
+                    (err, rows, fields) => {
+                        console.log('rows', rows);
+                        console.log('err', err);
+                        if(err){
+                            res.send(false)
+                        }else{
+                            res.send(true)
+                        }
+                    }
+                )
+            }else{
+                console.log("err")
+                // res.send(true);
+            }
+        });
+
+
+});
+
+
 //로그인
 app.post('/auth/login', (req, res)=>{
     let sql = 'SELECT * FROM USER WHERE account = ?';
@@ -106,6 +140,7 @@ app.post('/auth/login', (req, res)=>{
             if(rows[0].account === account && rows[0].password === password){
                 req.session.is_logined = true;
                 req.session.account = post.account;
+                req.session.user_id = rows[0].id;
                 res.send(rows[0]);
             }else{
                 res.send(false);
@@ -120,14 +155,21 @@ app.get('/auth/logout', (req,res)=>{
     })
 })
 
-app.get('/', (req, res, next) => {
-
-    if(req.session.num === undefined){
-        req.session.num = 1;
+app.get('/userInfo', (req, res, next) => {
+    if(req.session.is_logined === false){
+        res.send(`세션정보 없음`)
     }else{
-        req.session.num = req.session.num + 1;
+        let sql = 'SELECT * FROM USER WHERE id = ?';
+        let params = [req.session.user_id];
+        connection.query(sql, params,
+            (err, rows, fields)=>{
+                if(rows){
+                    res.send(rows[0]);
+                }else{
+                    res.send(false);
+                }
+            })
     }
-    res.send(`Views :  ${req.session.num}`);
 })
 
 

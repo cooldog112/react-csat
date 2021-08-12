@@ -35,7 +35,7 @@ class Person extends React.Component {
                 <TableCell className={classes.menu}>{this.props.person.applicant}</TableCell>
                 <TableCell className={classes.menu}>{this.props.person.candidate}</TableCell>
                 <TableCell className={classes.menu}>{this.props.person.absentee}</TableCell>
-                <TableCell className={classes.menu}><PersonAdd/></TableCell>
+                <TableCell className={classes.menu}><PersonAdd stateRefresh={this.props.stateRefresh} id={this.props.id} person={this.props.person}/></TableCell>
             </TableRow>
         )
     }

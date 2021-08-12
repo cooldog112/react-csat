@@ -96,11 +96,9 @@ class ReportAdd extends  React.Component{
         const { classes } = this.props;
         return(
             <div>
-                <Button variant="contained" color="primary" onClick={this.handleClickOpen}>보고하기</Button>
+                <Button variant="contained" color="primary" onClick={this.handleClickOpen}>문답지 보고</Button>
                 <Dialog open={this.state.open} onClose={this.handleClose}>
                     <DialogTitle onClose={this.handleClose}>문답지 이상유무 보고</DialogTitle>
-
-
                     <DialogContent>
                         <form autoComplete="off">
                             {/*<TextField label="보고자 직위" type="text" name="position" value={this.state.report.position} onChange={this.handleValueChange}/><br/>*/}
