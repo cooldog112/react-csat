@@ -83,6 +83,9 @@ class UserLogin extends React.Component{
             open : false
         })
     }
+    openSite = () => {
+        window.open('http://cafe.edunavi.kr/2020CSATTF', '_blank');
+    }
 
     handleValueChange = (e) => {
         let nextState = {};
@@ -104,6 +107,7 @@ class UserLogin extends React.Component{
         const { classes } = this.props;
         return (
             <div>
+                <Button id="dataRoom" color="inherit" onClick={this.openSite}>자료실</Button>
                 <Button id="LoginButton" color="inherit" onClick={this.loginOpen}>{this.state.btn}</Button>
                 <Dialog  open={this.state.open} onClose={this.loginClose}>
                     <DialogTitle className={classes.menu} >로그인</DialogTitle>

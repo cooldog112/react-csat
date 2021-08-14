@@ -44,6 +44,80 @@ app.get('/api/customers', (req, res) => {
         }
     );
 });
+app.get('/api/schoolReport', (req, res)=>{
+    connection.query(
+        "select report.id as id, user_id, position, name, error, account from report join user where report.user_id = user.id and report.id in (select max(id) from report group by user_id) order by user_id;",
+        (err, rows, fields) =>{
+            res.send(rows);
+        }
+    )
+})
+app.get('/api/schoolPerson1', (req, res)=>{
+    connection.query(
+        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 1 and person.user_id = user.id and person.id in (select max(id) from person where period=1 group by user_id) order by user_id;",
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    );
+});
+app.get('/api/schoolPerson2', (req, res)=>{
+    connection.query(
+        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 2 and person.user_id = user.id and person.id in (select max(id) from person where period=2 group by user_id) order by user_id;",
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    );
+});
+app.get('/api/schoolPerson3', (req, res)=>{
+    connection.query(
+        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 3 and person.user_id = user.id and person.id in (select max(id) from person where period=3 group by user_id) order by user_id;",
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    );
+});
+app.get('/api/schoolPerson4', (req, res)=>{
+    connection.query(
+        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 4 and person.user_id = user.id and person.id in (select max(id) from person where period=4 group by user_id) order by user_id;",
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    );
+});
+app.get('/api/schoolPerson5', (req, res)=>{
+    connection.query(
+        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 5 and person.user_id = user.id and person.id in (select max(id) from person where period=5 group by user_id) order by user_id;",
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    );
+});
+app.get('/api/total', (req, res)=>{
+    connection.query(
+        "select year, period, applicant, candidate, absentee from total union all select '2022', period, sum(applicant) as applicant, sum(candidate) as candidate, sum(absentee) as absentee from (select * from (select * from person order by id desc limit 100000)b group by period, user_id order by period, user_id)a group by period order by period, year desc;",
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    );
+});
+app.get('/api/reportChart', (req, res)=>{
+    connection.query(
+        "select error, count(error) as cnt from report where id in (select max(id) from report group by user_id) group by error order by error;",
+        (err, rows, fileds) => {
+            res.send(rows);
+
+        }
+    );
+});
+app.get('/api/personChart/:period', (req, res)=>{
+    let sql = "select period, sum(applicant) as applicant, sum(candidate) as candidate, sum(absentee) as absentee from person where period=? and id in (select max(id) from person where period=? group by user_id); ";
+    let params = [req.params.period, req.params.period];
+    connection.query(sql, params,
+        (err, rows, fileds)=>{
+            res.send(rows);
+        }
+    );
+});
 
 //한명의 유저 정보 가져오기
 app.get('/api/user/:id', (req, res)=>{

@@ -61,6 +61,7 @@ const styles = theme => ({
     marginLeft: 18,
     marginRight: 18,
     marginTop : 18,
+    justifyContent: 'center'
   },
   progress:{
     margin: theme.spacing(1) * 2

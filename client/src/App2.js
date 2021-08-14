@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import App from './App';
-import Admin from './Admin';
+import Admin from './Admin/Admin';
 import { Route } from 'react-router-dom';
 
 class App2 extends Component {
