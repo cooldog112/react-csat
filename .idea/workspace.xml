@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fff066a-323b-4e89-8444-7e384ad808b2" name="Default Changelist" comment="import nodemodule">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,6 +422,7 @@
       <workItem from="1628826423170" duration="80000" />
       <workItem from="1628827461063" duration="31305000" />
       <workItem from="1628902934621" duration="16385000" />
+      <workItem from="1632656514760" duration="324000" />
     </task>
     <task id="LOCAL-00001" summary="Add Node.js Express Server Module">
       <created>1607487578171</created>
@@ -449,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628923162086</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="import nodemodule">
+      <created>1632656772648</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632656772648</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
