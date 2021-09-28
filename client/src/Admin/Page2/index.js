@@ -123,7 +123,8 @@ class Page2 extends Component {
                                 <TableCell className={classes.tableHead}>번호</TableCell>
                                 <TableCell className={classes.tableHead}>시험장</TableCell>
                                 <TableCell className={classes.tableHead}>지원자</TableCell>
-                                <TableCell className={classes.tableHead}>응시자</TableCell>
+                                <TableCell className={classes.tableHead}>응시자(일반시험실)</TableCell>
+                                <TableCell className={classes.tableHead}>응시자(별도시험실)</TableCell>
                                 <TableCell className={classes.tableHead}>결시자</TableCell>
                                 <TableCell className={classes.tableHead}>결시율</TableCell>
                             </StyledTableRow>
@@ -134,6 +135,7 @@ class Page2 extends Component {
                                     <StyledTableCell className={classes.tableContent}>{c.account}</StyledTableCell>
                                     <StyledTableCell className={classes.tableContent}>{c.applicant}</StyledTableCell>
                                     <StyledTableCell className={classes.tableContent}>{c.candidate}</StyledTableCell>
+                                    <StyledTableCell className={classes.tableContent}>{c.other}</StyledTableCell>
                                     <StyledTableCell className={classes.tableContent}>{c.absentee}</StyledTableCell>
                                 <StyledTableCell className={classes.tableContent}>{c.applicant? (c.absentee / c.applicant * 100).toFixed(2) : '0.00'}%</StyledTableCell>
                                 </StyledTableRow>

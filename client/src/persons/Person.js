@@ -14,7 +14,14 @@ const styles = theme =>({
     menu:{
         fontSize : '1.5rem',
         textAlign : 'center',
-        width : '20%',
+        width : '15%',
+        height : '30px'
+
+    },
+    menu2:{
+        fontSize : '1.5rem',
+        textAlign : 'center',
+        width : '10%',
         height : '30px'
 
     },
@@ -33,7 +40,8 @@ class Person extends React.Component {
             <TableRow >
                 <TableCell className={classes.menu}>{this.props.person.period}</TableCell>
                 <TableCell className={classes.menu}>{this.props.person.applicant}</TableCell>
-                <TableCell className={classes.menu}>{this.props.person.candidate}</TableCell>
+                <TableCell className={classes.menu2}>{this.props.person.candidate}</TableCell>
+                <TableCell className={classes.menu2}>{this.props.person.other}</TableCell>
                 <TableCell className={classes.menu}>{this.props.person.absentee}</TableCell>
                 <TableCell className={classes.menu}><PersonAdd stateRefresh={this.props.stateRefresh} id={this.props.id} person={this.props.person}/></TableCell>
             </TableRow>

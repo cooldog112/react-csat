@@ -54,7 +54,7 @@ app.get('/api/schoolReport', (req, res)=>{
 })
 app.get('/api/schoolPerson1', (req, res)=>{
     connection.query(
-        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 1 and person.user_id = user.id and person.id in (select max(id) from person where period=1 group by user_id) order by user_id;",
+        "select person.id as id, user_id, applicant, candidate, other, absentee, person.created as created, person.updated as updated, account from person join user where period = 1 and person.user_id = user.id and person.id in (select max(id) from person where period=1 group by user_id) order by user_id;",
         (err, rows, fields) => {
             res.send(rows);
         }
@@ -62,7 +62,7 @@ app.get('/api/schoolPerson1', (req, res)=>{
 });
 app.get('/api/schoolPerson2', (req, res)=>{
     connection.query(
-        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 2 and person.user_id = user.id and person.id in (select max(id) from person where period=2 group by user_id) order by user_id;",
+        "select person.id as id, user_id, applicant, candidate, other, absentee, person.created as created, person.updated as updated, account from person join user where period = 2 and person.user_id = user.id and person.id in (select max(id) from person where period=2 group by user_id) order by user_id;",
         (err, rows, fields) => {
             res.send(rows);
         }
@@ -70,7 +70,7 @@ app.get('/api/schoolPerson2', (req, res)=>{
 });
 app.get('/api/schoolPerson3', (req, res)=>{
     connection.query(
-        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 3 and person.user_id = user.id and person.id in (select max(id) from person where period=3 group by user_id) order by user_id;",
+        "select person.id as id, user_id, applicant, candidate, other, absentee, person.created as created, person.updated as updated, account from person join user where period = 3 and person.user_id = user.id and person.id in (select max(id) from person where period=3 group by user_id) order by user_id;",
         (err, rows, fields) => {
             res.send(rows);
         }
@@ -78,7 +78,7 @@ app.get('/api/schoolPerson3', (req, res)=>{
 });
 app.get('/api/schoolPerson4', (req, res)=>{
     connection.query(
-        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 4 and person.user_id = user.id and person.id in (select max(id) from person where period=4 group by user_id) order by user_id;",
+        "select person.id as id, user_id, applicant, candidate, other, absentee, person.created as created, person.updated as updated, account from person join user where period = 4 and person.user_id = user.id and person.id in (select max(id) from person where period=4 group by user_id) order by user_id;",
         (err, rows, fields) => {
             res.send(rows);
         }
@@ -86,7 +86,7 @@ app.get('/api/schoolPerson4', (req, res)=>{
 });
 app.get('/api/schoolPerson5', (req, res)=>{
     connection.query(
-        "select person.id as id, user_id, applicant, candidate, absentee, person.created as created, person.updated as updated, account from person join user where period = 5 and person.user_id = user.id and person.id in (select max(id) from person where period=5 group by user_id) order by user_id;",
+        "select person.id as id, user_id, applicant, candidate, other, absentee, person.created as created, person.updated as updated, account from person join user where period = 5 and person.user_id = user.id and person.id in (select max(id) from person where period=5 group by user_id) order by user_id;",
         (err, rows, fields) => {
             res.send(rows);
         }
@@ -140,7 +140,7 @@ app.get('/api/report', (req, res)=>{
 });
 
 app.get('/api/person', (req, res)=>{
-    let sql = 'select id, user_id, period, applicant, candidate, absentee, created, updated from person where id in (select max(id) from person where user_id = ? group by period) order by period';
+    let sql = 'select id, user_id, period, applicant, candidate, absentee, other, created, updated from person where id in (select max(id) from person where user_id = ? group by period) order by period';
     let params = [req.session.user_id];
     connection.query(sql, params,
         (err,rows, fields)=>{
@@ -167,7 +167,7 @@ app.post('/report/add', (req, res)=> {
 });
 
 app.post('/person/add', (req, res)=> {
-    let selectSql = 'select id, user_id, period, applicant, candidate, absentee, created, updated from person where id in (select max(id) from person where user_id = ? and period = ?)';
+    let selectSql = 'select id, user_id, period, applicant, candidate, absentee, created, other, updated from person where id in (select max(id) from person where user_id = ? and period = ?)';
     let selectParams = [req.body.id, req.body.period];
     let post = req.body;
     let applicant='';
@@ -175,9 +175,8 @@ app.post('/person/add', (req, res)=> {
         (err,rows, fields)=>{
             if(rows){
                 applicant = rows[0].applicant;
-                let sql = 'INSERT INTO PERSON(user_id, period, applicant, candidate, absentee) values(?, ?, ?, ?, ?)';
-                let candidate = req.body.candidate;
-                let params = [post.id, post.period, applicant, candidate, applicant-candidate];
+                let sql = 'INSERT INTO PERSON(user_id, period, applicant, candidate, other, absentee) values(?, ?, ?, ?, ?, ?)';
+                let params = [post.id, post.period, applicant, req.body.candidate, req.body.other, req.body.absentee];
                 console.log("params : " + params);
                 connection.query(sql, params,
                     (err, rows, fields) => {
@@ -238,7 +237,7 @@ app.get('/userInfo', (req, res, next) => {
         connection.query(sql, params,
             (err, rows, fields)=>{
                 if(rows){
-                    res.send(rows[0]);
+                    res.send(rows);
                 }else{
                     res.send(false);
                 }

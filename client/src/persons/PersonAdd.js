@@ -63,21 +63,28 @@ class PersonAdd extends  React.Component{
             period : this.props.person.period,
             applicant : this.state.applicant,
             candidate : this.state.candidate,
+            other : this.state.other,
             absentee : this.state.absentee
         }
-        axios.post(url, person)
-            .then(res =>{
-                if(res){
-                    alert(person.period+'교시 응시자 보고 완료')
-                    this.handleClose()
-                    this.props.stateRefresh()
-                }else{
-                    alert('응시자 보고에 실패했습니다.')
-                }
-            })
-            .catch(error=>{
-                console.log(error)
-            })
+        if(Number(this.props.person.applicant) === Number(person.candidate)+Number(person.other)+Number(person.absentee)){
+            axios.post(url, person)
+                .then(res =>{
+                    if(res){
+                        alert(person.period+'교시 응시자 보고 완료')
+                        this.handleClose()
+                        this.props.stateRefresh()
+                    }else{
+                        alert('응시자 보고에 실패했습니다.')
+                    }
+                })
+                .catch(error=>{
+                    console.log(error)
+                })
+        }else{
+            alert("지원자수와 일반시험실 응시자 + 별도시험실 응시자 + 결시자 수가 일치하지 않습니다.");
+        }
+
+
     }
 
     render() {
@@ -91,8 +98,9 @@ class PersonAdd extends  React.Component{
                         <form autoComplete="off">
                             {/*<TextField label="보고자 직위" type="text" name="position" value={this.state.report.position} onChange={this.handleValueChange}/><br/>*/}
                             {/*<TextField label="지원자" type="number" name="applicant" value={this.state.applicant} onChange={this.handleValueChange}/><br/>*/}
-                            <TextField label="응시자" type="number" name="candidate" value={this.state.candidate} onChange={this.handleValueChange}/><br/>
-                            {/*<TextField label="결시자" type="number" name="absentee" value={this.state.absentee} onChange={this.handleValueChange}/><br/>*/}
+                            <TextField label="일반시험실 응시자" type="number" name="candidate" value={this.state.candidate} onChange={this.handleValueChange}/><br/>
+                            <TextField label="별도시험실 응시자" type="number" name="other" value={this.state.other} onChange={this.handleValueChange}/><br/>
+                            <TextField label="결시자" type="number" name="absentee" value={this.state.absentee} onChange={this.handleValueChange}/><br/>
                         </form>
 
                     </DialogContent>

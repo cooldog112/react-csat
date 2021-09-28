@@ -41,6 +41,5 @@ create table total(
    updated datetime default current_timestamp on update current_timestamp
 ) engine=InnodB default charset=utf8mb4;
 
-
-insert into user(account, password, testRoomNum, applicantNum)
-values('매천고','1234','20','400');
+-- person 테이블에 별도시험실 인원을 위한 컬럼 추가
+ALTER TABLE person ADD other integer;

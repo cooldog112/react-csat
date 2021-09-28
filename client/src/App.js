@@ -90,7 +90,15 @@ const styles = theme => ({
     fontSize: '1.5rem',
     justifyContent : 'center',
     textAlign : 'center',
-    width : '20%',
+    width : '15%',
+    height: '25px',
+    backgroundColor : '#f5fffa'
+  },
+  tableHead2:{
+    fontSize: '1.5rem',
+    justifyContent : 'center',
+    textAlign : 'center',
+    width : '10%',
     height: '25px',
     backgroundColor : '#f5fffa'
   }
@@ -241,11 +249,20 @@ class App extends Component {
             <Table className={classes.table}>
               <TableHead>
                 <TableRow>
-                  <TableCell className={classes.tableHead}>교시</TableCell>
-                  <TableCell className={classes.tableHead}>지원자</TableCell>
-                  <TableCell className={classes.tableHead}>응시자</TableCell>
-                  <TableCell className={classes.tableHead}>결시자</TableCell>
-                  <TableCell className={classes.tableHead}>보고</TableCell>
+                  <TableCell className={classes.tableHead} rowSpan={2}>교시</TableCell>
+                  <TableCell className={classes.tableHead} rowSpan={2}>지원자</TableCell>
+                  <TableCell className={classes.tableHead} colSpan={2}>응시자</TableCell>
+                  <TableCell className={classes.tableHead} rowSpan={2}>결시자</TableCell>
+                  <TableCell className={classes.tableHead} rowSpan={2}>보고</TableCell>
+                  {/*<TableCell className={classes.tableHead}></TableCell>*/}
+                </TableRow>
+                <TableRow>
+                  {/*<TableCell className={classes.tableHead}>교시</TableCell>*/}
+                  {/*<TableCell className={classes.tableHead}>지원자</TableCell>*/}
+                  <TableCell className={classes.tableHead}>일반시험장</TableCell>
+                  <TableCell className={classes.tableHead}>별도시험장</TableCell>
+                  {/*<TableCell className={classes.tableHead}>결시자</TableCell>*/}
+                  {/*<TableCell className={classes.tableHead}>보고</TableCell>*/}
                 </TableRow>
               </TableHead>
               <TableBody>
