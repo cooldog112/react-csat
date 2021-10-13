@@ -14,6 +14,7 @@ create table person(
     period integer,
     applicant integer ,
     candidate integer,
+    other integer,
     absentee integer,
     created datetime default current_timestamp,
     updated datetime default current_timestamp on update current_timestamp
