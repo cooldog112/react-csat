@@ -112,16 +112,16 @@ app.get('/api/personChart/:period', (req, res)=>{
 
 //한명의 유저 정보 가져오기
 app.get('/api/user/:id', (req, res)=>{
-    let sql = 'SELECT * FROM USER WHERE id = ?;';
+    let sql = 'SELECT * FROM user WHERE id = ?;';
     let params = [req.params.id];
     connection.query(sql, params,
         (err, rows, fields) => {
-            res.send(rows);
+            res.send(rows[0]);
         }
     )
 });
 app.get('/api/report', (req, res)=>{
-    let sql = 'SELECT * FROM REPORT WHERE user_id= ? ORDER BY id DESC;';
+    let sql = 'SELECT * FROM report WHERE user_id= ? ORDER BY id DESC;';
     let params = [req.session.user_id];
     connection.query(sql, params,
         (err, rows, fields) =>{
@@ -141,7 +141,7 @@ app.get('/api/person', (req, res)=>{
 });
 
 app.post('/report/add', (req, res)=> {
-    let sql = 'INSERT INTO REPORT(user_id, position, name, error, content) values(?, ?, ?, ?, ?);';
+    let sql = 'INSERT INTO report(user_id, position, name, error, content) values(?, ?, ?, ?, ?);';
     let post = req.body;
     let params = [post.id, post.position, post.name, post.error, post.content];
     connection.query(sql, params,
@@ -166,7 +166,7 @@ app.post('/person/add', (req, res)=> {
         (err,rows, fields)=>{
             if(rows){
                 applicant = rows[0].applicant;
-                let sql = 'INSERT INTO PERSON(user_id, period, applicant, candidate, other, absentee) values(?, ?, ?, ?, ?, ?);';
+                let sql = 'INSERT INTO person(user_id, period, applicant, candidate, other, absentee) values(?, ?, ?, ?, ?, ?);';
                 let params = [post.id, post.period, applicant, req.body.candidate, req.body.other, req.body.absentee];
                 console.log("params : " + params);
                 connection.query(sql, params,
@@ -192,7 +192,7 @@ app.post('/person/add', (req, res)=> {
 
 //로그인
 app.post('/auth/login', (req, res)=>{
-    let sql = 'SELECT * FROM USER WHERE account = ?;';
+    let sql = 'SELECT * FROM user WHERE account = ?;';
     let post = req.body;
     let account = post.account;
     let password = post.password;
@@ -223,7 +223,7 @@ app.get('/userInfo', (req, res, next) => {
     if(req.session.is_logined === false){
         res.send(`세션정보 없음`)
     }else{
-        let sql = 'SELECT * FROM USER WHERE id = ?;';
+        let sql = 'SELECT * FROM user WHERE id = ?;';
         let params = [req.session.user_id];
         connection.query(sql, params,
             (err, rows, fields)=>{
