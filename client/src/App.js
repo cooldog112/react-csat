@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import User from "./users/User";
 import UserLogin from "./users/UserLogin";
-import Customer from "./components/Customer";
-import CustomerAdd from "./components/CustomerAdd";
 import Report from "./reports/Report";
 import Person from "./persons/Person";
 import Pager from '@material-ui/core/Paper';
@@ -121,7 +119,6 @@ class App extends Component {
         .then(res => this.setState({persons : res}))
         .catch(err => console.log(err));
     this.state = {
-      customers: '',
       user:'',
       report : '',
       persons : '',
@@ -170,19 +167,7 @@ class App extends Component {
   }
 
 
-  componentDidMount() {
-    this.timer = setInterval(this.progress, 20);
-    this.callApi()
-        .then(res => this.setState({customers: res}))
-        .catch(err => console.log(err));
-  }
 
-  callApi = async () => {
-    const response = await fetch('/api/customers');
-    const body = await response.json();
-
-    return body;
-  }
 
   handleValueChange = (e) => {
     let nextState = {};
@@ -200,7 +185,7 @@ class App extends Component {
                 <MenuIcon />
               </IconButton>
               <Typography variant="h5" className={classes.title}>
-                2022 수능 시스템
+                2022. 수능 시험장 현황 보고 시스템
               </Typography>
               <UserLogin userInfo = {this.userInfo}/>
             </Toolbar>
@@ -214,7 +199,7 @@ class App extends Component {
                 <TableRow>
                   <TableCell className={classes.tableHead}>번호</TableCell>
                   <TableCell className={classes.tableHead}>학교명</TableCell>
-                  <TableCell className={classes.tableHead}>시험장 수</TableCell>
+                  <TableCell className={classes.tableHead}>시험실 수</TableCell>
                   <TableCell className={classes.tableHead}>지원자 수</TableCell>
                 </TableRow>
               </TableHead>
@@ -224,7 +209,7 @@ class App extends Component {
             </Table>
           </Pager>
           <Typography variant="h5" className={classes.subTitle}>
-            시험지 이상 유무 보고
+            문답지  이상 유무 보고
           </Typography>
           <Pager className={classes.paper}>
             <Table className={classes.table}>
@@ -243,7 +228,7 @@ class App extends Component {
             </Table>
           </Pager>
           <Typography variant="h5" className={classes.subTitle}>
-            일반시험장 현황
+            시험실 현황
           </Typography>
           <Pager className={classes.paper}>
             <Table className={classes.table}>
@@ -259,8 +244,8 @@ class App extends Component {
                 <TableRow>
                   {/*<TableCell className={classes.tableHead}>교시</TableCell>*/}
                   {/*<TableCell className={classes.tableHead}>지원자</TableCell>*/}
-                  <TableCell className={classes.tableHead}>일반시험장</TableCell>
-                  <TableCell className={classes.tableHead}>별도시험장</TableCell>
+                  <TableCell className={classes.tableHead}>일반시험실</TableCell>
+                  <TableCell className={classes.tableHead}>별도시험실</TableCell>
                   {/*<TableCell className={classes.tableHead}>결시자</TableCell>*/}
                   {/*<TableCell className={classes.tableHead}>보고</TableCell>*/}
                 </TableRow>
