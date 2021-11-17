@@ -93,7 +93,7 @@ class PersonAdd extends  React.Component{
             <div>
                 <Button variant="contained" color="primary" onClick={this.handleClickOpen}>응시자 보고</Button>
                 <Dialog open={this.state.open} onClose={this.handleClose}>
-                    <DialogTitle onClose={this.handleClose}>{this.props.person.period}교시 수험생 보고</DialogTitle>
+                    <DialogTitle onClose={this.handleClose}>수험생 보고</DialogTitle>
                     <DialogContent>
                         <form autoComplete="off">
                             {/*<TextField label="보고자 직위" type="text" name="position" value={this.state.report.position} onChange={this.handleValueChange}/><br/>*/}

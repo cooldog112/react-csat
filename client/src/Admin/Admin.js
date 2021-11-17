@@ -12,6 +12,7 @@ import Page4 from './Page4';
 import Page5 from './Page5';
 import Page6 from './Page6';
 import Page7 from './Page7';
+import Page10 from './Page10';
 import {BrowserRouter, Route, Link} from "react-router-dom";
 
 
@@ -134,8 +135,9 @@ class Admin extends Component {
                             <Link to='/Page2' className={classes.userTitle}>1교시 현황</Link>
                             <Link to='/Page3' className={classes.userTitle}>2교시 현황</Link>
                             <Link to='/Page4' className={classes.userTitle}>3교시 현황</Link>
-                            <Link to='/Page5' className={classes.userTitle}>4교시 현황</Link>
-                            <Link to='/Page6' className={classes.userTitle}>5교시 현황</Link>
+                            <Link to='/Page5' className={classes.userTitle}>한국사 현황</Link>
+                            <Link to='/Page6' className={classes.userTitle}>탐구 현황</Link>
+                            <Link to='/Page10' className={classes.userTitle}>5교시 현황</Link>
                             <Link to='/Page7' className={classes.userTitle}>대구 현황 종합</Link>
                         </Toolbar>
                     </AppBar>
@@ -148,6 +150,7 @@ class Admin extends Component {
                     <Route path='/Page5' component={Page5}/>
                     <Route path='/Page6' component={Page6}/>
                     <Route path='/Page7' component={Page7}/>
+                    <Route path='/Page10' component={Page10}/>
                 </div>
             </BrowserRouter>
         );

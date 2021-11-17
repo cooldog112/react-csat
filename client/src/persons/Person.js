@@ -38,7 +38,7 @@ class Person extends React.Component {
         const { classes } = this.props;
         return (
             <TableRow >
-                <TableCell className={classes.menu}>{this.props.person.period}</TableCell>
+                <TableCell className={classes.menu}>{this.props.person.period === 4 ? '한국사':this.props.person.period === 5 ? '탐구':this.props.person.period === 6 ? '5':this.props.person.period}</TableCell>
                 <TableCell className={classes.menu}>{this.props.person.applicant}</TableCell>
                 <TableCell className={classes.menu2}>{this.props.person.candidate}</TableCell>
                 <TableCell className={classes.menu2}>{this.props.person.other}</TableCell>

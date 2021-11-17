@@ -14,7 +14,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie:{
-	    maxAge: 1000*60*60*6
+        maxAge: 1000*60*60*6
     }
 }))
 
@@ -81,6 +81,14 @@ app.get('/api/schoolPerson4', (req, res)=>{
 app.get('/api/schoolPerson5', (req, res)=>{
     connection.query(
         "select person.id as id, user_id, applicant, candidate, other, absentee, person.created as created, person.updated as updated, account from person join user where period = 5 and person.user_id = user.id and person.id in (select max(id) from person where period=5 and applicant > 0 group by user_id) order by user_id;",
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    );
+});
+app.get('/api/schoolPerson6', (req, res)=>{
+    connection.query(
+        "select person.id as id, user_id, applicant, candidate, other, absentee, person.created as created, person.updated as updated, account from person join user where period = 6 and person.user_id = user.id and person.id in (select max(id) from person where period=6 and applicant > 0 group by user_id) order by user_id;",
         (err, rows, fields) => {
             res.send(rows);
         }
